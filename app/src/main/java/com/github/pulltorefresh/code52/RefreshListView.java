@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.animation.RotateAnimation;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -37,7 +38,7 @@ import java.util.Date;
  * updateDes：${TODO}
  * ============================================================
  **/
-public class RefreshListView extends ListView implements OnScrollListener{
+public class RefreshListView extends ListView implements OnScrollListener, AdapterView.OnItemClickListener{
 
 	private View headerView;//headerView
 	private ImageView iv_arrow;
@@ -93,6 +94,14 @@ public class RefreshListView extends ListView implements OnScrollListener{
 		
 		addHeaderView(headerView);
 	}
+
+	private void initFooterView() {
+		footerView = View.inflate(getContext(), R.layout.layout_footer, null);
+		footerView.measure(0, 0);//主动通知系统去测量该view;
+		footerViewHeight = footerView.getMeasuredHeight();
+		footerView.setPadding(0, -footerViewHeight, 0, 0);
+		addFooterView(footerView);
+	}
 	
 	/**
 	 * 初始化旋转动画
@@ -103,19 +112,12 @@ public class RefreshListView extends ListView implements OnScrollListener{
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 		upAnimation.setDuration(300);
 		upAnimation.setFillAfter(true);
+
 		downAnimation = new RotateAnimation(-180, -360, 
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 		downAnimation.setDuration(300);
 		downAnimation.setFillAfter(true);
-	}
-	
-	private void initFooterView() {
-		footerView = View.inflate(getContext(), R.layout.layout_footer, null);
-		footerView.measure(0, 0);//主动通知系统去测量该view;
-		footerViewHeight = footerView.getMeasuredHeight();
-		footerView.setPadding(0, -footerViewHeight, 0, 0);
-		addFooterView(footerView);
 	}
 	
 	@Override
@@ -147,10 +149,8 @@ public class RefreshListView extends ListView implements OnScrollListener{
 					refreshHeaderView();
 				}
 				
-				
 				return true;//拦截TouchMove，不让listview处理该次move事件,会造成listview无法滑动
 			}
-			
 			
 			break;
 		case MotionEvent.ACTION_UP:
@@ -252,6 +252,21 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	@Override
 	public void onScroll(AbsListView view, int firstVisibleItem,
 			int visibleItemCount, int totalItemCount) {
+	}
+
+	OnItemClickListener mItemClickListener;
+
+	@Override
+	public void setOnItemClickListener(OnItemClickListener listener) {
+		super.setOnItemClickListener(this);
+		mItemClickListener = listener;
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		if (mItemClickListener != null) {
+			mItemClickListener.onItemClick(parent, view, position - getHeaderViewsCount(), id);
+		}
 	}
 
 }

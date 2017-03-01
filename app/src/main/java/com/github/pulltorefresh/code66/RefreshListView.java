@@ -325,9 +325,7 @@ public class RefreshListView extends ListView implements OnScrollListener,
 
 	// 重写item点击方法
 	@Override
-	public void setOnItemClickListener(
-			android.widget.AdapterView.OnItemClickListener listener) {
-		mItemClickListener = listener;
+	public void setOnItemClickListener(android.widget.AdapterView.OnItemClickListener listener) {mItemClickListener = listener;
 		super.setOnItemClickListener(this);// 将点击事件设置给当前的RefreshListView
 	}
 
@@ -335,8 +333,7 @@ public class RefreshListView extends ListView implements OnScrollListener,
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		if (mItemClickListener != null) {
-			mItemClickListener.onItemClick(parent, view, position
-					- getHeaderViewsCount(), id);
+			mItemClickListener.onItemClick(parent, view, position - getHeaderViewsCount(), id);
 		}
 	}
 }

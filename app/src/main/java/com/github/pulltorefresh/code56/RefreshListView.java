@@ -10,6 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -41,7 +42,7 @@ import java.util.Date;
  * updateDes：${TODO}
  * ============================================================
  **/
-public class RefreshListView extends ListView implements OnScrollListener
+public class RefreshListView extends ListView implements OnScrollListener, AdapterView.OnItemClickListener
 {
 	private static final String	TAG						= "RefreshListView";
 
@@ -86,7 +87,6 @@ public class RefreshListView extends ListView implements OnScrollListener
 
 	public RefreshListView(Context context) {
 		super(context);
-
 		initHeaderLayout();
 		initFooterLayout();
 		initAnimation();
@@ -94,7 +94,6 @@ public class RefreshListView extends ListView implements OnScrollListener
 
 	public RefreshListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-
 		initHeaderLayout();
 		initFooterLayout();
 		initAnimation();
@@ -478,5 +477,20 @@ public class RefreshListView extends ListView implements OnScrollListener
 	public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount)
 	{
 
+	}
+
+	OnItemClickListener mItemClickListener;
+
+	@Override
+	public void setOnItemClickListener(OnItemClickListener listener) {
+		super.setOnItemClickListener(this);
+		mItemClickListener = listener;
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		if (mItemClickListener != null) {
+			mItemClickListener.onItemClick(parent, view, position - getHeaderViewsCount(), id);
+		}
 	}
 }

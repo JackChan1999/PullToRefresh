@@ -266,16 +266,13 @@ public class PullToRefreshView extends ListView implements OnScrollListener,
 
 	@Override
 	public void onScrollStateChanged(AbsListView view, int scrollState) {
-		if (scrollState == SCROLL_STATE_IDLE
-				|| scrollState == SCROLL_STATE_FLING) {
+		if (scrollState == SCROLL_STATE_IDLE || scrollState == SCROLL_STATE_FLING) {
 
 			if (getLastVisiblePosition() == getCount() - 1 && !isLoadingMore) {// 滑动到最后
-				System.out.println("到底了.....");
+				//System.out.println("到底了.....");
 				mFooterView.setPadding(0, 0, 0, 0);// 显示
 				setSelection(getCount() - 1);// 改变listview显示位置
-
 				isLoadingMore = true;
-
 				if (mListener != null) {
 					mListener.onLoadMore();
 				}
@@ -286,25 +283,20 @@ public class PullToRefreshView extends ListView implements OnScrollListener,
 	@Override
 	public void onScroll(AbsListView view, int firstVisibleItem,
 			int visibleItemCount, int totalItemCount) {
-
 	}
 
 	OnItemClickListener mItemClickListener;
 
 	@Override
-	public void setOnItemClickListener(
-			OnItemClickListener listener) {
+	public void setOnItemClickListener(OnItemClickListener listener) {
 		super.setOnItemClickListener(this);
-
 		mItemClickListener = listener;
 	}
 
 	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		if (mItemClickListener != null) {
-			mItemClickListener.onItemClick(parent, view, position
-					- getHeaderViewsCount(), id);
+			mItemClickListener.onItemClick(parent, view, position - getHeaderViewsCount(), id);
 		}
 	}
 

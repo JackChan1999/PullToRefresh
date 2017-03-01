@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -40,7 +41,7 @@ import java.util.Date;
  * ============================================================
  **/
 
-public class RefreshListView extends ListView
+public class RefreshListView extends ListView implements AdapterView.OnItemClickListener
 {
 
 	private View			foot;							// listview加载更多数据的尾部组件
@@ -109,7 +110,6 @@ public class RefreshListView extends ListView
 
 	public RefreshListView(Context context) {
 		this(context, null);
-
 	}
 
 	private void initView() {
@@ -186,12 +186,10 @@ public class RefreshListView extends ListView
 			//判断状态
 			//如果是PULL_DOWN状态,松开恢复原状
 			if (currentState == PULL_DOWN) {
-				ll_refresh_head_root.setPadding(0, -ll_refresh_head_root_Height, 0,
-						0);
+				ll_refresh_head_root.setPadding(0, -ll_refresh_head_root_Height, 0, 0);
 			} else if (currentState == RELEASE_STATE) {
 				//刷新数据
-				ll_refresh_head_root.setPadding(0, 0, 0,
-						0);
+				ll_refresh_head_root.setPadding(0, 0, 0, 0);
 				currentState = REFRESHING;//改变状态为正在刷新数据的状态
 				refreshState();//刷新界面
 				//真的刷新数据
@@ -245,7 +243,6 @@ public class RefreshListView extends ListView
 			iv_arrow.setVisibility(View.GONE);//隐藏箭头
 			pb_loading.setVisibility(View.VISIBLE);//显示进度条
 			tv_state.setText("正在刷新数据");
-			
 		default:
 			break;
 		}
@@ -366,11 +363,9 @@ public class RefreshListView extends ListView
 	 * 初始化头部组件
 	 */
 	private void initHead() {
-		head = (LinearLayout) View.inflate(getContext(),
-				R.layout.listview_head_container, null);
+		head = (LinearLayout) View.inflate(getContext(), R.layout.listview_head_container, null);
 		// listview刷新头的根布局
-		ll_refresh_head_root = (LinearLayout) head
-				.findViewById(R.id.ll_listview_head_root);
+		ll_refresh_head_root = (LinearLayout) head.findViewById(R.id.ll_listview_head_root);
 		
 		//获取刷新头布局的子组件
 		//刷新状态的文件描述
@@ -398,6 +393,21 @@ public class RefreshListView extends ListView
 		ll_refresh_head_root.setPadding(0, -ll_refresh_head_root_Height, 0, 0);
 
 		addHeaderView(head);
+	}
+
+	OnItemClickListener mItemClickListener;
+
+	@Override
+	public void setOnItemClickListener(OnItemClickListener listener) {
+		super.setOnItemClickListener(this);
+		mItemClickListener = listener;
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		if (mItemClickListener != null) {
+			mItemClickListener.onItemClick(parent, view, position - getHeaderViewsCount(), id);
+		}
 	}
 
 }
