@@ -11,9 +11,11 @@
 
 这里我们将使用前面所学的自定义控件的知识来进行自定义一个具有下拉刷新和上拉加载的ListView如图所示。
 
-<img src="https://github.com/JackChen1999/PullToRefresh/blob/master/art/pullToRefresh-4.jpg" width="300" /> <img src="https://github.com/JackChen1999/PullToRefresh/blob/master/art/pullToRefresh-3.jpg" width="300" /> 
+<img src="https://github.com/JackChen1999/PullToRefresh/blob/master/art/PullToRefresh-1.jpg" width="300" /> <img src="https://github.com/JackChen1999/PullToRefresh/blob/master/art/PullToRefresh-2.jpg" width="300" /> 
 
-<img src="https://github.com/JackChen1999/PullToRefresh/blob/master/art/pullToRefresh-2.jpg" width="300" /> <img src="https://github.com/JackChen1999/PullToRefresh/blob/master/art/pullToRefresh-1.jpg" width="300" />
+<img src="https://github.com/JackChen1999/PullToRefresh/blob/master/art/PullToRefresh-3.jpg" width="300" /> <img src="https://github.com/JackChen1999/PullToRefresh/blob/master/art/PullToRefresh-4.jpg" width="300" />
+
+<img src="https://github.com/JackChen1999/PullToRefresh/blob/master/art/PullToRefresh-5.jpg" width="300" />
 
 ## **布局界面 UI**
 
