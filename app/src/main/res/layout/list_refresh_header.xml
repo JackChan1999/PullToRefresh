@@ -7,28 +7,29 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp" >
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp" >
 
         <ImageView
-            android:id="@+id/iv_arr"
+            android:id="@+id/iv_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@mipmap/common_listview_headview_red_arrow" />
 
         <ProgressBar
-            android:id="@+id/pb_progress"
+            android:id="@+id/pb_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:indeterminateDrawable="@drawable/custom_progress"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            android:indeterminateDrawable="@drawable/custom_progress" />
     </FrameLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical" >
 
@@ -38,16 +39,16 @@
             android:layout_height="wrap_content"
             android:text="下拉刷新"
             android:textColor="#f00"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="最后刷新时间:2015-03-10 17:07:07"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="14sp" />
+            android:text="2015-08-12 14:45"
+            android:textColor="#9e9e9e"
+            android:textSize="15sp" />
     </LinearLayout>
 
 </LinearLayout>

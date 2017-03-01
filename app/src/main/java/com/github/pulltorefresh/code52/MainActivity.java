@@ -1,4 +1,4 @@
-package com.github.pulltorefresh;
+package com.github.pulltorefresh.code52;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,13 +10,13 @@ import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.github.pulltorefresh.view.RefreshListView;
+import com.github.pulltorefresh.R;
 
 import java.util.ArrayList;
 /**
  * ============================================================
  * Copyright：${TODO}有限公司版权所有 (c) 2017
- * Author：   陈冠杰
+ * Author：   AllenIverson
  * Email：    815712739@qq.com
  * GitHub：   https://github.com/JackChen1999
  * 博客：     http://blog.csdn.net/axi295309066
@@ -26,7 +26,7 @@ import java.util.ArrayList;
  * Package_Name：com.github.pulltorefresh
  * Version：1.0
  * time：2016/2/15 17:18
- * des ：${TODO}
+ * des ：自定义控件52 下拉刷新
  * gitVersion：$Rev$
  * updateAuthor：$Author$
  * updateDate：$Date$

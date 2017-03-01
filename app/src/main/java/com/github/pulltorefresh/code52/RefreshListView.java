@@ -1,4 +1,4 @@
-package com.github.pulltorefresh.view;
+package com.github.pulltorefresh.code52;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -30,7 +30,7 @@ import java.util.Date;
  * Package_Name：com.github.pulltorefresh
  * Version：1.0
  * time：2016/2/15 17:18
- * des ：${TODO}
+ * des ：下拉刷新 52期自定义控件
  * gitVersion：$Rev$
  * updateAuthor：$Author$
  * updateDate：$Date$

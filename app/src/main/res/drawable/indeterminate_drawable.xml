@@ -3,8 +3,7 @@
     android:fromDegrees="0"
     android:pivotX="50%"
     android:pivotY="50%"
-    android:drawable="@drawable/indicate_rotate"
+    android:drawable="@mipmap/indicate_rotate"
     android:toDegrees="360">
-    
 
 </rotate>
