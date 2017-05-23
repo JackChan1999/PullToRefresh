@@ -228,11 +228,8 @@ public abstract class RefreshLayoutBase<T extends View> extends ViewGroup implem
      * 初始化 header view
      */
     protected void setupHeaderView(Context context) {
-        mHeaderView = LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header, this,
-                false);
-        mHeaderView
-                .setLayoutParams(new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT,
-                        mHeaderHeight));
+        mHeaderView = LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header, this, false);
+        mHeaderView.setLayoutParams(new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, mHeaderHeight));
         mHeaderView.setBackgroundColor(Color.RED);
         mHeaderView.setPadding(0, mHeaderHeight - 100, 0, 0);
         addView(mHeaderView);

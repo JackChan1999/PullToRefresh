@@ -1,13 +1,35 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".code52.MainActivity" >
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="16dp"
+    android:orientation="vertical"
+    >
 
-    <com.heima52.pullrefresh.view.RefreshListView
-        android:id="@+id/refreshListView"
+    <Button
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </com.heima52.pullrefresh.view.RefreshListView>
+        android:layout_height="50dp"
+        android:onClick="click"
+        android:text="仿美图下拉刷新"/>
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:onClick="click"
+        android:text="普通下拉刷新"/>
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:onClick="click"
+        android:text="ListView实现的下拉刷新"/>
+
+</LinearLayout>
