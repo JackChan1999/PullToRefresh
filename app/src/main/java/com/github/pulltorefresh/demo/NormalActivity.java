@@ -41,6 +41,7 @@ public class NormalActivity extends AppCompatActivity {
 		});
 		initRecyclerView();
 	}
+
 	private void initRecyclerView() {
 		recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 		recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -51,8 +52,6 @@ public class NormalActivity extends AppCompatActivity {
 		MyAdapter adapter = new MyAdapter(datas);
 		recyclerView.setAdapter(adapter);
 	}
-
-
 
 	private class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 		private List<String> datas;

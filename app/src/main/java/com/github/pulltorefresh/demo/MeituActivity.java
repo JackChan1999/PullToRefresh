@@ -40,27 +40,27 @@ public class MeituActivity extends AppCompatActivity {
 //		for (int i = 0; i < 30; i++) {
 //			datas.add("条目" + i);
 //		}
-//		MyAdapter adapter = new MyAdapter(datas);
+//		ListAdapter adapter = new ListAdapter(datas);
 //		recyclerView.setAdapter(adapter);
 //	}
 //
 //
 //
-//	private class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+//	private class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
 //		private List<String> datas;
 //
-//		public MyAdapter(List<String> datas) {
+//		public ListAdapter(List<String> datas) {
 //			this.datas = datas;
 //		}
 //
 //		@Override
-//		public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+//		public ListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 //			View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, null);//TODO
-//			return new MyViewHolder(view);
+//			return new ListViewHolder(view);
 //		}
 //
 //		@Override
-//		public void onBindViewHolder(MyViewHolder holder, int position) {
+//		public void onBindViewHolder(ListViewHolder holder, int position) {
 //			holder.tv.setText(datas.get(position));
 //		}
 //
@@ -69,10 +69,10 @@ public class MeituActivity extends AppCompatActivity {
 //			return datas.size();
 //		}
 //
-//		class MyViewHolder extends RecyclerView.ViewHolder {
+//		class ListViewHolder extends RecyclerView.ViewHolder {
 //			private TextView tv;
 //
-//			public MyViewHolder(View itemView) {
+//			public ListViewHolder(View itemView) {
 //				super(itemView);
 //				tv = (TextView) itemView.findViewById(android.R.id.text1);
 //			}

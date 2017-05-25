@@ -124,7 +124,7 @@ public class Demo52Activity extends AppCompatActivity {
 				
 				//在UI线程更新UI
 				handler.sendEmptyMessage(0);
-			};
+			}
 		}.start();
 	}
 	

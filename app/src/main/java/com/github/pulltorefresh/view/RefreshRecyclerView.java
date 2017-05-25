@@ -162,7 +162,7 @@ public class RefreshRecyclerView extends RecyclerView {
 
     @Override
     public void setAdapter(Adapter adapter) {
-        //包装成XWrapAdapter
+        //包装成WrapAdapter
         adapter = new WrapAdapter(mHeaderView, mFooterView, adapter);
         super.setAdapter(adapter);
     }
@@ -275,11 +275,14 @@ public class RefreshRecyclerView extends RecyclerView {
                 break;
         }
 
-        //在静止的状态下   && 必须是最后显示的条目就是RecyclerView的最后一个条目 && 没有在加载更多的数据
+        // 在静止的状态下   && 必须是最后显示的条目就是RecyclerView的最后一个条目 && 没有在加载更多的数据
         boolean isState = state == RecyclerView.SCROLL_STATE_IDLE;
-        //最后一个条目显示的下标
+        // 最后一个条目显示的下标
+        // If RecyclerView has item decorators, they will be considered in calculations as well.
         int lastVisibleItemPosition = lm.findLastVisibleItemPosition();
+        // boolean isLastVisibleItem = lastVisibleItemPosition == getAdapter().getItemCount() - 2; // 没有设置分割线的情况下
         boolean isLastVisibleItem = lastVisibleItemPosition == getAdapter().getItemCount() - 1;
+
         if (isState && isLastVisibleItem && !hasLoadMoreData && mOnLoadMoreListener != null) {
             hasLoadMoreData = true;
             //显示脚

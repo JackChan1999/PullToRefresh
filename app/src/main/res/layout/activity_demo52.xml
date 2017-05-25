@@ -7,7 +7,6 @@
     <com.github.pulltorefresh.demo52.RefreshListView
         android:id="@+id/refreshListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </com.github.pulltorefresh.demo52.RefreshListView>
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

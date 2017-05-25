@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:onClick="click"
-        android:text="仿美图下拉刷新"/>
+        android:text="通用的下拉刷新：仿美图下拉刷新"/>
 
     <Button
         android:id="@+id/btn2"
@@ -22,7 +22,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:onClick="click"
-        android:text="普通下拉刷新"/>
+        android:text="通用的下拉刷新：普通下拉刷新"/>
 
     <Button
         android:id="@+id/btn3"
@@ -31,5 +31,13 @@
         android:layout_marginTop="10dp"
         android:onClick="click"
         android:text="ListView实现的下拉刷新"/>
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:onClick="click"
+        android:text="RecyclerView实现的下拉刷新"/>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.github.pulltorefresh;
+package com.github.pulltorefresh.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.github.pulltorefresh.R;
 import com.github.pulltorefresh.demo.MeituActivity;
 import com.github.pulltorefresh.demo.NormalActivity;
 import com.github.pulltorefresh.demo52.Demo52Activity;
@@ -53,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn3:
                 startActivity(new Intent(this, Demo52Activity.class));
+                break;
+
+            case R.id.btn4:
+                startActivity(new Intent(this, PullToRefreshAct.class));
                 break;
         }
 
