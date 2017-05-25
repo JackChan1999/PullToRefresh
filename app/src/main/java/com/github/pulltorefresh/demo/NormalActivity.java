@@ -63,7 +63,7 @@ public class NormalActivity extends AppCompatActivity {
 
 		@Override
 		public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-			View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, null);//TODO
+			View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, null);
 			return new MyViewHolder(view);
 		}
 
